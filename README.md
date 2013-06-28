@@ -1,4 +1,6 @@
-# C#.NET Wrapper for TripleTex's Json-RPC API
+# TripleTexDotNet 
+
+a C#.NET Wrapper for TripleTex's Json-RPC API.
 
 This wrapper is third-party and unaffiliated with http://tripletex.no/.
 
