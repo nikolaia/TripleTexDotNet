@@ -12,16 +12,14 @@ Work in progress (The wrapper is incomplete).
     var jsonService = new JsonService();  
       
     //Before using any methods we have to use the SyncService to Login:  
-    var syncSerivce = new SyncService();  
+    var syncSerivce = new SyncService(jsonService);  
     syncService.Login(syncSystem, syncPassword, username, password);  
       
     //Now that we have logged in and have a valid session we can use more services:  
     var companyService = new CompanyService(jsonService);  
-      
-    //Run a method or two:  
     companyService.SearchForCustomersAndVendors(CustomerVendorType.All, CustomerIsActive.All, "");  
       
-    // And eventually log out:  
+    // And eventually we log out:  
     syncService.Logout();
 
 ## TODO ##
