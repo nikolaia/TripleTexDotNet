@@ -6,12 +6,18 @@ This wrapper is third-party and unaffiliated with http://tripletex.no/.
 
 Work in progress (The wrapper is incomplete). 
 
-Examples to come.
+Example of usage:
+
+```var syncService = new SyncService(syncSystem, syncPassword, username, password);
+var companyService = new CompanyService(syncService.GetService());
+companyService.SearchForCustomersAndVendors(CustomerVendorType.All, CustomerIsActive.All, "");
+syncService.Logout();```
 
 ## TODO
 
 - Implement all methods
 - Add tests
+- Make available on NuGet
 
 ## Based on
 https://tripletex.no/resources/api/tripletex-api.pdf 
