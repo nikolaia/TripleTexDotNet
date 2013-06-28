@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using TripleTexDotNet.Interfaces;
 
 namespace TripleTexDotNet.Services
 {
-    public class VoucherService
+    public class VoucherService : IVoucherService
     {
-        private readonly SyncService _syncService;
+        private readonly IJsonService _service;
 
-        public VoucherService(SyncService syncService)
+        public VoucherService(IJsonService service)
         {
-            _syncService = syncService;
+            _service = service;
         }
 
-        public void VoucherImportMamutGBAT10()
+        public void ImportMamutGbat10()
         {
             throw new NotImplementedException();
         }

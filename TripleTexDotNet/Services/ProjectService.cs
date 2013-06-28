@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using TripleTexDotNet.Interfaces;
 
 namespace TripleTexDotNet.Services
 {
-    public class ProjectService
+    public class ProjectService : IProjectService
     {
-        private readonly SyncService _syncService;
+        private readonly IJsonService _service;
 
-        public ProjectService(SyncService syncService)
+        public ProjectService(IJsonService service)
         {
-            _syncService = syncService;
+            _service = service;
         }
 
-        public void ProjectGetForTimesheet()
+        public void GetForTimesheet()
         {
             throw new NotImplementedException();
         }

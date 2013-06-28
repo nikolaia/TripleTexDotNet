@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using TripleTexDotNet.Classes;
+using TripleTexDotNet.Interfaces;
 
 namespace TripleTexDotNet.Services
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
-        private readonly SyncService _syncService;
+        private readonly IJsonService _service;
 
-        public ProductService(SyncService syncService)
+        public ProductService(IJsonService service)
         {
-            _syncService = syncService;
+            _service = service;
         }
 
         public IEnumerable<Product> SearchForProducts(string searchString)
         {
-            return _syncService.GetService().Call<IEnumerable<Product>>("Product.searchForProducts", -1, searchString);
+            return _service.Call<IEnumerable<Product>>("Product.searchForProducts", -1, searchString);
         }
 
         public void SaveProduct()

@@ -2,24 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TripleTexDotNet.Interfaces;
 
 namespace TripleTexDotNet.Services
 {
-    public class AccountingReportService
+    public class AccountingReportService : IAccountingReportService
     {
-        private readonly SyncService _syncService;
+        private readonly IJsonService _service;
 
-        public AccountingReportService(SyncService syncService)
+        public AccountingReportService(IJsonService service)
         {
-            _syncService = syncService;
+            _service = service;
         }
 
-        public void AccountingReportGetCustomersOpenRecordsBalanceOut()
+        public void GetCustomersOpenRecordsBalanceOut()
         {
             throw new NotImplementedException();
         }
 
-        public void AccountingReportGetSuppliersOpenRecordsBalanceOut()
+        public void GetSuppliersOpenRecordsBalanceOut()
         {
             throw new NotImplementedException();
         }

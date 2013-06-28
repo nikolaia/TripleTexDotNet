@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TripleTexDotNet.Interfaces;
 
 namespace TripleTexDotNet.Services
 {
-    public class HourService
+    public class HourService : IHourService
     {
-        private readonly SyncService _syncService;
+        private readonly IJsonService _service;
 
-        public HourService(SyncService syncService)
+        public HourService(IJsonService service)
         {
-            _syncService = syncService;
+            _service = service;
         }
 
         public void HourSave()

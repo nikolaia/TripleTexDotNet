@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using TripleTexDotNet.Interfaces;
 
 namespace TripleTexDotNet.Services
 {
-    public class SalaryReportService
+    public class SalaryReportService : ISalaryReportService
     {
-        private readonly SyncService _syncService;
+        private readonly IJsonService _service;
 
-        public SalaryReportService(SyncService syncService)
+        public SalaryReportService(IJsonService service)
         {
-            _syncService = syncService;
+            _service = service;
         }
 
-        public void SalaryGetEmployeeVacationBalance()
+        public void GetEmployeeVacationBalance()
         {
             throw new NotImplementedException();
         }

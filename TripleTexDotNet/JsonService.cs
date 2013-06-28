@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 
 namespace TripleTexDotNet
 {
-    public class JsonService
+    public class JsonService : IJsonService
     {
         readonly string _url;
         protected CookieContainer Cookies;
@@ -22,11 +22,11 @@ namespace TripleTexDotNet
         public T Call<T>(string method, params object[] params_) where T : class
         {
             var parameters = new
-                {
-                    id = 1,
-                    method,
-                    @params = params_
-                };
+            {
+                id = 1,
+                method,
+                @params = params_
+            };
 
             var webRequest = (HttpWebRequest)WebRequest.Create(_url);
             webRequest.Method = "POST";

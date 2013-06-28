@@ -2,24 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TripleTexDotNet.Interfaces;
 
 namespace TripleTexDotNet.Services
 {
-    public class SyncService
+    public class SyncService : ISyncService
     {
-        private readonly JsonService _service;
+        private readonly IJsonService _service;
         public int CustomerId { get; set; }
         public int UserId { get; set; }
 
-        public SyncService(int syncSystem, string syncPassword, string username, string password)
+        public SyncService(IJsonService service)
         {
-            _service = new JsonService("https://tripletex.no/JSON-RPC");
-            Login(syncSystem, syncPassword, username, password);
-        }
-
-        public JsonService GetService()
-        {
-            return _service;
+            _service = service;
         }
 
         public void CreateTripleTextAccount()
@@ -27,7 +22,7 @@ namespace TripleTexDotNet.Services
             throw new NotImplementedException();
         }
 
-        protected void Login(int syncSystem, string syncPassword, string username, string password)
+        public void Login(int syncSystem, string syncPassword, string username, string password)
         {
             var res = _service.Call<string[]>("Sync.login", syncSystem, syncPassword, username, password);
 

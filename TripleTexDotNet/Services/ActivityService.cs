@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TripleTexDotNet.Interfaces;
 
 namespace TripleTexDotNet.Services
 {
-    public class ActivityService
+    public class ActivityService : IActivityService
     {
-        private readonly SyncService _syncService;
+        private readonly IJsonService _service;
 
-        public ActivityService(SyncService syncService)
+        public ActivityService(IJsonService service)
         {
-            _syncService = syncService;
+            _service = service;
         }
 
-        public void ActivityGetForTimesheet()
+        public void GetForTimesheet()
         {
             throw new NotImplementedException();
         }

@@ -8,10 +8,17 @@ Work in progress (The wrapper is incomplete).
 
 Example of usage:
 
-```var syncService = new SyncService(syncSystem, syncPassword, username, password);
-var companyService = new CompanyService(syncService.GetService());
-companyService.SearchForCustomersAndVendors(CustomerVendorType.All, CustomerIsActive.All, "");
-syncService.Logout();```
+Initiate the JsonService which keeps our session and does the calls to the Json-RPC API:
+```var jsonService = new JsonService();```
+Before using any methods we have to use the SyncService to Login:
+```var syncSerivce = new SyncService();```
+```syncService.Login(syncSystem, syncPassword, username, password);```
+Now that we have logged in and have a valid session we can use the jsonService in the other TripleTex services:
+```var companyService = new CompanyService(jsonService);```
+Run a method or two:
+```companyService.SearchForCustomersAndVendors(CustomerVendorType.All, CustomerIsActive.All, "");```
+And eventually logout if needed:
+```syncService.Logout();```
 
 ## TODO
 

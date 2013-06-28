@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TripleTexDotNet.Classes;
+﻿using TripleTexDotNet.Classes;
+using TripleTexDotNet.Interfaces;
 
 namespace TripleTexDotNet.Services
 {
-    public class OrderService
+    public class OrderService : IOrderService
     {
-        private readonly SyncService _syncService;
+        private readonly IJsonService _service;
 
-        public OrderService(SyncService syncService)
+        public OrderService(IJsonService service)
         {
-            _syncService = syncService;
+            _service = service;
         }
 
         public Order ImportOrdersTripletexCsv(Order order)
         {
-            return _syncService.GetService().Call<Order>("Project.importOrdersTripletexCSV", Helpers.ObjectToCsvString(order), "UTF-8", false, false, true);
+            return _service.Call<Order>("Project.importOrdersTripletexCSV", Helpers.ObjectToCsvString(order), "UTF-8", false, false, true);
         }
     }
 }

@@ -1,35 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using TripleTexDotNet.Interfaces;
 
 namespace TripleTexDotNet.Services
 {
-    public class InvoiceService
+    public class InvoiceService : IInvoiceService
     {
-        private readonly SyncService _syncService;
+        private readonly IJsonService _service;
 
-        public InvoiceService(SyncService syncService)
+        public InvoiceService(IJsonService service)
         {
-            _syncService = syncService;
+            _service = service;
         }
 
-        public void importInvoicesTripletexCSV()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void getHistoryAmountCurrencyOutstanding()
+        public void ImportInvoicesTripletexCsv()
         {
             throw new NotImplementedException();
         }
 
-        public void createPaymentVoucher()
+        public void GetHistoryAmountCurrencyOutstanding()
         {
             throw new NotImplementedException();
         }
 
-        public void isCredited()
+        public void CreatePaymentVoucher()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void IsCredited()
         {
             throw new NotImplementedException();
         }

@@ -1,83 +1,82 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using TripleTexDotNet.Interfaces;
 
 namespace TripleTexDotNet.Services
 {
-    public class ProjectReportService
+    public class ProjectReportService : IProjectReportService
     {
-        private readonly SyncService _syncService;
+        private readonly IJsonService _service;
 
-        public ProjectReportService(SyncService syncService)
+        public ProjectReportService(IJsonService service)
         {
-            _syncService = syncService;
+            _service = service;
         }
-        public void ProjectReportGetSumEmployeeChargeableHours()
-        {
-            throw new NotImplementedException();
-        }
-        public void ProjectReportGetSumHours()
+
+        public void GetSumEmployeeChargeableHours()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetSumEmployeeNonChargeablePaymentHours()
+        public void GetSumHours()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetEmployeeChargeablePercentage()
+        public void GetSumEmployeeNonChargeablePaymentHours()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetDepartmentChargeablePercentage()
+        public void GetEmployeeChargeablePercentage()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetSumDepartmentChargeableHours()
+        public void GetDepartmentChargeablePercentage()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetDepartmentProjectsFee()
+        public void GetSumDepartmentChargeableHours()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetDepartmentProjectsNetRate()
+        public void GetDepartmentProjectsFee()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetDepartmentProjectsNetAmount()
+        public void GetDepartmentProjectsNetRate()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetCompanyChargeablePercentage()
+        public void GetDepartmentProjectsNetAmount()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetSumCompanyChargeableHours()
+        public void GetCompanyChargeablePercentage()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetCompanyProjectsFee()
+        public void GetSumCompanyChargeableHours()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetCompanyProjectsNetAmount()
+        public void GetCompanyProjectsFee()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetCompanyProjectsNetRate()
+        public void GetCompanyProjectsNetAmount()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetSumHourlyRateProjectsChargeableHours()
+        public void GetCompanyProjectsNetRate()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetHourlyRateProjectsFee()
+        public void GetSumHourlyRateProjectsChargeableHours()
         {
             throw new NotImplementedException();
         }
-        public void ProjectReportGetHourlyRateProjectsFeeRate()
+        public void GetHourlyRateProjectsFee()
+        {
+            throw new NotImplementedException();
+        }
+        public void GetHourlyRateProjectsFeeRate()
         {
             throw new NotImplementedException();
         }
