@@ -15,11 +15,13 @@ Work in progress (The wrapper is incomplete).
     var syncSerivce = new SyncService();  
     syncService.Login(syncSystem, syncPassword, username, password);  
       
-    //Now that we have logged in and have a valid session we can use the jsonService in the other TripleTex services:  
+    //Now that we have logged in and have a valid session we can use more services:  
     var companyService = new CompanyService(jsonService);  
       
     //Run a method or two:  
     companyService.SearchForCustomersAndVendors(CustomerVendorType.All, CustomerIsActive.All, "");  
+      
+    // And eventually log out:  
     syncService.Logout();
 
 ## TODO ##
