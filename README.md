@@ -8,19 +8,21 @@ Work in progress (The wrapper is incomplete).
 
 ## Example of usage ##
 
-    //Initiate the JsonService which keeps our session and does the calls to the Json-RPC API:  
-    var jsonService = new JsonService();  
-      
-    //Before using any methods we have to use the SyncService to Login:  
-    var syncSerivce = new SyncService(jsonService);  
-    syncService.Login(syncSystem, syncPassword, username, password);  
-      
-    //Now that we have logged in and have a valid session we can use more services:  
-    var companyService = new CompanyService(jsonService);  
-    companyService.SearchForCustomersAndVendors(CustomerVendorType.All, CustomerIsActive.All, "");  
-      
-    // And eventually we log out:  
-    syncService.Logout();
+	var tripleTexFacade = new TripleTexFacade(syncSystem, syncPassword, username, password);
+	tripleTexFacade.GetCompanyService().SearchForCustomersAndVendors(CustomerVendorType.All, CustomerIsActive.All, "");
+
+## Integration tests ##
+
+To run the integration tests you need to create an app.config file in the .Tests project:
+
+	<configuration>
+		<appSettings>
+			<add key="TripleTexSyncSystem" value="7"/>
+			<add key="TripleTexSyncPassword" value="loremipsum"/>
+			<add key="TripleTexUsername" value="loremipsum"/>
+			<add key="TripleTexPassword" value="loremipsum"/>
+		</appSettings>
+	</configuration>
 
 ## TODO ##
 

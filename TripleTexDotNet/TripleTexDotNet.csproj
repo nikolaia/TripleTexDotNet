@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.0.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\packages\Autofac.3.0.2\lib\net40\Autofac.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -54,8 +60,9 @@
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\Product.cs" />
-    <Compile Include="IJsonService.cs" />
+    <Compile Include="Interfaces\IJsonService.cs" />
     <Compile Include="Interfaces\ICompanyService.cs" />
+    <Compile Include="Interfaces\ITripleTexFacade.cs" />
     <Compile Include="Interfaces\ISyncService.cs" />
     <Compile Include="Services\AccountingReportService.cs" />
     <Compile Include="Services\ActivityService.cs" />
@@ -83,6 +90,7 @@
     <Compile Include="Services\VoucherService.cs" />
     <Compile Include="JsonService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TripleTexFacade.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
