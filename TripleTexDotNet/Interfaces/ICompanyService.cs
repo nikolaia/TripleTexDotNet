@@ -7,6 +7,6 @@ namespace TripleTexDotNet.Interfaces
     {
         IEnumerable<Customer> SearchForCustomersAndVendors(CustomerVendorType vendorType, CustomerIsActive isActive,
                                                            string searchString);
-        Customer SaveCustomerVendor(Customer customer);
+        int SaveCustomerVendor(Customer customer);
     }
 }

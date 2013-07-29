@@ -65,6 +65,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IntegrationTests\CompanyServiceIntegrationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTests\Services\CompanyServiceTests.cs" />
     <Compile Include="IntegrationTests\TripleTexFacadeIntegrationTests.cs" />

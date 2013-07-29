@@ -30,14 +30,12 @@ namespace TripleTexDotNet.Tests.IntegrationTests
         [Test]
         public void Check_If_Dependency_Injection_Is_Working()
         {
-            // Verify the result
             Assert.IsNotNull(_tripleTexFacade.GetCompanyService(), "Should be type ICompanyService.");
         }
 
         [Test]
         public void Make_Sure_JsonService_Keeps_The_Session_Cookie()
         {
-            // Verify the result
             _tripleTexFacade.GetCompanyService()
                             .SearchForCustomersAndVendors(CustomerVendorType.All, CustomerIsActive.All, "");
 

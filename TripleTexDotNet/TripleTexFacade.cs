@@ -32,6 +32,8 @@ namespace TripleTexDotNet
 
             builder.RegisterType<SyncService>().As<ISyncService>();
             builder.RegisterType<CompanyService>().As<ICompanyService>();
+            builder.RegisterType<OrderService>().As<IOrderService>();
+            builder.RegisterType<ProductService>().As<IProductService>();
 
             _container = builder.Build();
 
@@ -42,6 +44,16 @@ namespace TripleTexDotNet
         public ICompanyService GetCompanyService()
         {
             return _container.Resolve<ICompanyService>();
+        }
+
+        public IOrderService GetOrderService()
+        {
+            return _container.Resolve<IOrderService>();
+        }
+
+        public IProductService GetProductService()
+        {
+            return _container.Resolve<IProductService>();
         }
 
         public void Dispose()

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TripleTexDotNet.Classes;
 using TripleTexDotNet.Interfaces;
 
@@ -18,9 +19,9 @@ namespace TripleTexDotNet.Services
             return _service.Call<IEnumerable<Customer>>("Company.searchForCustomersAndVendors", (int)vendorType, (int)isActive, searchString);
         }
 
-        public Customer SaveCustomerVendor(Customer customer)
+        public int SaveCustomerVendor(Customer customer)
         {
-            return _service.Call<Customer>("Project.saveCustomerVendor", Helpers.ObjectToObjectArray(customer));
+            return _service.Call("Company.saveCustomerVendor", Helpers.ObjectToObjectArray(customer));
         }
     }
 }

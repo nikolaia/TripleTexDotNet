@@ -8,6 +8,7 @@ namespace TripleTexDotNet.Interfaces
     public interface ITripleTexFacade
     {
         ICompanyService GetCompanyService();
+        IOrderService GetOrderService();
         void Dispose();
     }
 }
